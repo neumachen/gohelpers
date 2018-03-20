@@ -1,0 +1,27 @@
+workspace:
+  base: /go
+  path: src/github.com/ParaServices/paratils
+
+pipeline:
+  notify_start:
+    image: plugins/slack
+    webhook: https://hooks.slack.com/services/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
+    channel: ci
+    username: drone
+    template: "<{{ build.link }}|Build #{{ build.number }} started> on <http://github.com/{{ repo.owner }}/{{ repo.name }}/tree/{{ build.branch }}|{{ repo.name }}:{{ build.branch }}> by @{{ build.author }}"
+
+  build:
+    image: golang:1.10-alpine
+    commands:
+      - apk update && apk add git
+      - go build ./...
+      - go test ./...
+
+  notify_finish:
+    image: plugins/slack
+    webhook: https://hooks.slack.com/services/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
+    channel: ci
+    username: drone
+    template: "<{{ build.link }}|Build #{{ build.number }} {{ build.status }}> on <http://github.com/{{ repo.owner }}/{{ repo.name }}/tree/{{ build.branch }}|{{ repo.name }}:{{ build.branch }}> by @{{ build.author }}"
+    when:
+      status: [ success, failure ]
