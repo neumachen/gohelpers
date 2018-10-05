@@ -2,10 +2,52 @@
 
 
 [[projects]]
+  branch = "master"
+  name = "github.com/ParaServices/errgo"
+  packages = ["."]
+  revision = "2125add2c84b294b68c9cf0a563b4cc1e6a40d13"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/ParaServices/paralog"
+  packages = ["."]
+  revision = "20edf469dca3b70a8ecd223b70586f0874e6177c"
+
+[[projects]]
   name = "github.com/davecgh/go-spew"
   packages = ["spew"]
   revision = "346938d642f2ec3594ed81d874461961cd0faa76"
   version = "v1.1.0"
+
+[[projects]]
+  name = "github.com/lib/pq"
+  packages = [
+    ".",
+    "oid"
+  ]
+  revision = "4ded0e9383f75c197b3a2aaa6d590ac52df6fd79"
+  version = "v1.0.0"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/magicalbanana/dbal"
+  packages = [
+    ".",
+    "sqltmpl"
+  ]
+  revision = "2247db098e09ad2d9246106c058c276617c4c63f"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/magicalbanana/errorx"
+  packages = ["."]
+  revision = "1b41c6533dc4457248bb7c1c8033b3e0999eb8b2"
+
+[[projects]]
+  name = "github.com/nats-io/nuid"
+  packages = ["."]
+  revision = "289cccf02c178dc782430d534e3c1f5b72af807f"
+  version = "v1.0.0"
 
 [[projects]]
   name = "github.com/pmezard/go-difflib"
@@ -14,14 +56,54 @@
   version = "v1.0.0"
 
 [[projects]]
+  branch = "master"
+  name = "github.com/streadway/amqp"
+  packages = ["."]
+  revision = "70e15c650864f4fc47f5d3c82ea117285480895d"
+
+[[projects]]
   name = "github.com/stretchr/testify"
   packages = ["assert"]
   revision = "12b6f73e6084dad08a7c6e575284b177ecafbc71"
   version = "v1.2.1"
 
+[[projects]]
+  name = "go.uber.org/atomic"
+  packages = ["."]
+  revision = "1ea20fb1cbb1cc08cbd0d913a96dead89aa18289"
+  version = "v1.3.2"
+
+[[projects]]
+  name = "go.uber.org/multierr"
+  packages = ["."]
+  revision = "3c4937480c32f4c13a875a1829af76c98ca3d40a"
+  version = "v1.1.0"
+
+[[projects]]
+  name = "go.uber.org/zap"
+  packages = [
+    ".",
+    "buffer",
+    "internal/bufferpool",
+    "internal/color",
+    "internal/exit",
+    "zapcore"
+  ]
+  revision = "ff33455a0e382e8a81d14dd7c922020b6b5e7982"
+  version = "v1.9.1"
+
+[[projects]]
+  branch = "master"
+  name = "google.golang.org/api"
+  packages = [
+    "googleapi",
+    "googleapi/internal/uritemplates"
+  ]
+  revision = "f5c49d98d21cc639f7ba8c7e4b127e88ee2af7ed"
+
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "dbc03d7c9dd4e54b6993c8ece59c3174becb58bd828e500cf8ad825e340278c4"
+  inputs-digest = "5329687eca219950aa52a2bc64f0510fbb9ac92fdb519de87bea85853ecf2a36"
   solver-name = "gps-cdcl"
   solver-version = 1
