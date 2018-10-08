@@ -15,6 +15,9 @@ func (d dateLayout) String() string {
 // YYYYMMDD ...
 var YYYYMMDD dateLayout = "2006-01-02"
 
+// ISO8601 ...
+var ISO8601 dateLayout = "2006-01-02T15:04:05-0700"
+
 // DateLayout ...
 func DateLayout(dl DateLayouter) string {
 	return dl.String()
