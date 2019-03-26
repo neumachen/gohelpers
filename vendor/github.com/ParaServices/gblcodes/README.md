@@ -1,0 +1,3 @@
+# gblcodes
+
+gblcodes provides AppCodes for use in responses and logging across Go applications. Codes are organized into files with various code types....

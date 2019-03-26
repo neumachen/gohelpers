@@ -10,6 +10,14 @@
   revision = "2125add2c84b294b68c9cf0a563b4cc1e6a40d13"
 
 [[projects]]
+  digest = "1:5f3ac6022c427c8ed3730ecef9aed088318f67a97af2d14e8035459003ea15e3"
+  name = "github.com/ParaServices/gblcodes"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "0e854d0b653ac48eced739167d2591817eb0ab1e"
+  version = "v0.2.2"
+
+[[projects]]
   branch = "master"
   digest = "1:f2c96e2396f864a4ffc7b7d40659e37284bfaba41bb6d9c058c32610d7efb8c5"
   name = "github.com/ParaServices/paralog"
@@ -72,6 +80,14 @@
   version = "v1.0.0"
 
 [[projects]]
+  digest = "1:274f67cb6fed9588ea2521ecdac05a6d62a8c51c074c1fccc6a49a40ba80e925"
+  name = "github.com/satori/go.uuid"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "f58768cc1a7a7e77a3bd49e98cdd21419399b6a3"
+  version = "v1.2.0"
+
+[[projects]]
   branch = "master"
   digest = "1:0c088044c1c1ee83e723692442df4fec9b3f2e57f7a99773485c97adfbc31695"
   name = "github.com/streadway/amqp"
@@ -86,6 +102,30 @@
   pruneopts = "UT"
   revision = "12b6f73e6084dad08a7c6e575284b177ecafbc71"
   version = "v1.2.1"
+
+[[projects]]
+  branch = "master"
+  digest = "1:f4e5276a3b356f4692107047fd2890f2fe534f4feeb6b1fd2f6dfbd87f1ccf54"
+  name = "github.com/xeipuuv/gojsonpointer"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "4e3ac2762d5f479393488629ee9370b50873b3a6"
+
+[[projects]]
+  branch = "master"
+  digest = "1:dc6a6c28ca45d38cfce9f7cb61681ee38c5b99ec1425339bfc1e1a7ba769c807"
+  name = "github.com/xeipuuv/gojsonreference"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "bd5ef7bd5415a7ac448318e64f11a24cd21e594b"
+
+[[projects]]
+  digest = "1:1c898ea6c30c16e8d55fdb6fe44c4bee5f9b7d68aa260cfdfc3024491dcc7bea"
+  name = "github.com/xeipuuv/gojsonschema"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "f971f3cd73b2899de6923801c147f075263e0c50"
+  version = "v1.1.0"
 
 [[projects]]
   digest = "1:3c1a69cdae3501bf75e76d0d86dc6f2b0a7421bc205c0cb7b96b19eed464a34d"
@@ -120,6 +160,17 @@
 
 [[projects]]
   branch = "master"
+  digest = "1:57627d6062d33f4df7476ed2338b12f3455607a722de699faf5151b233fd4245"
+  name = "golang.org/x/net"
+  packages = [
+    "webdav",
+    "webdav/internal/xml",
+  ]
+  pruneopts = "UT"
+  revision = "15845e8f865bdabdefb6e7da65b4d9e8de5e94ef"
+
+[[projects]]
+  branch = "master"
   digest = "1:12448e4f1cb1fa86d3af3e814577d37881b1a3d3472168aba15bc7330c6e486b"
   name = "google.golang.org/api"
   packages = [
@@ -134,9 +185,14 @@
   analyzer-version = 1
   input-imports = [
     "github.com/ParaServices/errgo",
+    "github.com/ParaServices/gblcodes",
     "github.com/ParaServices/paralog",
     "github.com/magicalbanana/dbal",
+    "github.com/satori/go.uuid",
     "github.com/stretchr/testify/assert",
+    "github.com/xeipuuv/gojsonschema",
+    "go.uber.org/zap/zapcore",
+    "golang.org/x/net/webdav",
   ]
   solver-name = "gps-cdcl"
   solver-version = 1

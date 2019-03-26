@@ -1,0 +1,38 @@
+workspace:
+  base: /go
+  path: src/github.com/ParaServices/gblcodes
+
+matrix:
+  TAG:
+    - 1.9-alpine
+    - 1.9.7-alpine
+    - 1.10-alpine
+
+pipeline:
+  notify_start:
+    image: plugins/slack
+    webhook: https://hooks.slack.com/services/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
+    channel: ci
+    username: drone
+    template: "<{{ build.link }}|Build #{{ build.number }} started> on <http://github.com/{{ repo.owner }}/{{ repo.name }}/tree/{{ build.branch }}|{{ repo.name }}:{{ build.branch }}> by @{{ build.author }}"
+
+  build:
+    group: buid_test
+    image: golang:${TAG}
+    commands:
+      - go build -v ./...
+
+  test:
+    group: buid_test
+    image: golang:${TAG}
+    commands:
+      - go test -v ./...
+
+  notify_finish:
+    image: plugins/slack
+    webhook: https://hooks.slack.com/services/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
+    channel: ci
+    username: drone
+    template: "<{{ build.link }}|Build #{{ build.number }} {{ build.status }}> on <http://github.com/{{ repo.owner }}/{{ repo.name }}/tree/{{ build.branch }}|{{ repo.name }}:{{ build.branch }}> by @{{ build.author }}"
+    when:
+      status: [ success, failure ]
