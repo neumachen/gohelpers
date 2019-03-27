@@ -70,7 +70,7 @@ func (e errorLinks) MarshalLogObject(kv zapcore.ObjectEncoder) error {
 // errorSource is used to provide references to the source of an error.
 // The Pointer is a JSON Pointer to the associated entity in the request
 // document.
-// The Paramter is a string indicating which query parameter caused the error.
+// The Parameter is a string indicating which query parameter caused the error.
 // for more information see http://jsonapi.org/format/#error-objects
 type errorSource struct {
 	Pointer   string `json:"pointer,omitempty"`
@@ -102,8 +102,11 @@ func (v validationErrors) Marshal() ([]byte, error) {
 
 // MarshalLogArray ...
 func (v validationErrors) MarshalLogArray(kv zapcore.ArrayEncoder) error {
-	for _, err := range v {
-		kv.AppendObject(err)
+	for _, ve := range v {
+		err := kv.AppendObject(ve)
+		if err != nil {
+			return err
+		}
 	}
 	return nil
 }

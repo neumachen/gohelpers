@@ -5,7 +5,6 @@ import (
 	"strings"
 
 	"github.com/ParaServices/gblcodes"
-	"github.com/ParaServices/paratils"
 	uuid "github.com/satori/go.uuid"
 	"github.com/xeipuuv/gojsonschema"
 	"golang.org/x/net/webdav"
@@ -18,7 +17,7 @@ func ValidateResponseBody(snapshot, schema []byte) error {
 		gojsonschema.NewBytesLoader(snapshot),
 	)
 	if err != nil {
-		return paratils.Errx(err)
+		return Errx(err)
 	}
 
 	if !result.Valid() {
