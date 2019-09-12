@@ -1,27 +1,69 @@
-workspace:
-  base: /go
-  path: src/github.com/ParaServices/paratils
+---
+kind: secret
+name: slack-webhook
 
-pipeline:
-  notify_start:
+get:
+  path: drone-kubernetes-secrets-data
+  name: slack-webhook
+---
+kind: pipeline
+name: build-test
+
+clone:
+  depth: 50
+
+volumes:
+  - name: deps
+    temp: {}
+
+steps:
+  - name: slack-notification-start-build-images
     image: plugins/slack
-    webhook: https://hooks.slack.com/services/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
-    channel: ci
-    username: drone
-    template: "<{{ build.link }}|Build #{{ build.number }} started> on <http://github.com/{{ repo.owner }}/{{ repo.name }}/tree/{{ build.branch }}|{{ repo.name }}:{{ build.branch }}> by @{{ build.author }}"
+    settings:
+      webhook:
+        from_secret: slack-webhook
+      channel: ci
+      username: drone
+      template: >
+        <{{ build.link }}|Container build(s) #{{ build.number }} started>
+        <http://github.com/{{ repo.owner }}/{{ repo.name }}/tree/{{ build.branch }}|
+        on {{ repo.name }}:{{ build.branch }}> by {{ build.author }}
 
-  build:
-    image: golang:1.10-alpine
+  - name: build-modules
+    image: golang:1.12.5-alpine3.9
+    volumes:
+      - name: deps
+        path: /go
     commands:
-      - apk update && apk add git
-      - go build ./...
-      - go test ./...
+      - apk add --no-cache git
+      - go build -v ./...
+      - go mod vendor
 
-  notify_finish:
+  - name: test
+    image: golang:1.12.5-alpine3.9
+    volumes:
+      - name: deps
+        path: /go
+    depends_on:
+      - build-modules
+    commands:
+      - apk add --no-cache alpine-sdk bash
+      - go test -v ./...
+
+  - name: slack-notification-finish-test
     image: plugins/slack
-    webhook: https://hooks.slack.com/services/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
-    channel: ci
-    username: drone
-    template: "<{{ build.link }}|Build #{{ build.number }} {{ build.status }}> on <http://github.com/{{ repo.owner }}/{{ repo.name }}/tree/{{ build.branch }}|{{ repo.name }}:{{ build.branch }}> by @{{ build.author }}"
+    settings:
+      webhook:
+        from_secret: slack-webhook
+      channel: ci
+      username: drone
+      template: >
+        <{{ build.link }}|Build #{{ build.number }} {{ build.status }}>
+        on <http://github.com/{{ repo.owner }}/{{ repo.name }}/tree/{{ build.branch }}|
+        {{ repo.name }}:{{ build.branch }}> by @{{ build.author }}
+    depends_on:
+      - test
     when:
-      status: [ success, failure ]
+      status:
+        - success
+        - failure
