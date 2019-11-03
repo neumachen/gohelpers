@@ -1,6 +1,7 @@
 package paratils
 
 import (
+	"reflect"
 	"testing"
 
 	"github.com/stretchr/testify/require"
@@ -20,7 +21,7 @@ func TestSliceIntersectStrings(t *testing.T) {
 
 	result := SliceIntersectStrings(a, b)
 	require.True(t, len(result) == 2)
-	require.Equal(t, []string{"b", "c"}, result)
+	require.True(t, reflect.DeepEqual([]string{"b", "c"}, result))
 }
 
 func TestSliceIntersectInts(t *testing.T) {
@@ -37,5 +38,5 @@ func TestSliceIntersectInts(t *testing.T) {
 
 	result := SliceIntersectInts(a, b)
 	require.True(t, len(result) == 2)
-	require.Equal(t, []int{2, 3}, result)
+	require.True(t, reflect.DeepEqual([]int{2, 3}, result))
 }
