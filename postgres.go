@@ -25,6 +25,15 @@ func SetupPostgresConnection(cfg *PostgresConfig, lgr paralog.Logger) (dbal.DBAL
 	if openErr != nil {
 		return nil, openErr
 	}
+	if cfg.ConnMaxLifetime != 0 {
+		db.SetConnMaxLifetime(cfg.ConnMaxLifetime)
+	}
+	if cfg.MaxIdleConns != 0 {
+		db.SetMaxIdleConns(cfg.MaxIdleConns)
+	}
+	if cfg.MaxOpenConns != 0 {
+		db.SetMaxOpenConns(cfg.MaxOpenConns)
+	}
 	lgrFunc := func(msg string) {
 		lgr.Info(msg)
 	}
