@@ -36,12 +36,12 @@ func TestToDecimills(t *testing.T) {
 		}
 
 		for i := range tests {
-			decimills, err := ToDecimills(tests[i].String)
+			d, err := ToDecimills(tests[i].String)
 			require.NoError(t, err)
 			// since the default exponent is 4, it's expected that the
 			// decimills will have 4 spaces on the fractional part of the
 			// number. Example, 12.22 == 12.2200 == 122200
-			require.Equal(t, tests[i].Decimills, decimills)
+			require.Equal(t, tests[i].Decimills, d.Decimills())
 		}
 	})
 
@@ -50,7 +50,7 @@ func TestToDecimills(t *testing.T) {
 			decimills, err := ToDecimills("1.12345")
 			require.Error(t, err)
 			require.Equal(t, fmt.Sprintf("decimals can not be greater than %d digits", decimillsExponent), err.Error())
-			require.Equal(t, int64(0), decimills)
+			require.Nil(t, decimills)
 		})
 	})
 }
