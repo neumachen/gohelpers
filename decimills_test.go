@@ -9,39 +9,85 @@ import (
 
 func TestToDecimills(t *testing.T) {
 	t.Run("success", func(t *testing.T) {
-		tests := []struct {
-			String    string
-			Decimills int64
-		}{
-			{
-				String:    "12.2200",
-				Decimills: 122200,
+		type TestCase struct {
+			String         string
+			Decimills      int64
+			IntegerPart    int64
+			FractionalPart int64
+		}
+
+		testCases := []TestCase{
+			TestCase{
+				String:         "10.1011",
+				Decimills:      101011,
+				IntegerPart:    10,
+				FractionalPart: 1011,
 			},
-			{
-				String:    "0.2200",
-				Decimills: 2200,
+			TestCase{
+				String:         "1.0001",
+				Decimills:      10001,
+				IntegerPart:    1,
+				FractionalPart: 1,
 			},
-			{
-				String:    "1.2",
-				Decimills: 12000,
+			TestCase{
+				String:         "1.0234",
+				Decimills:      10234,
+				IntegerPart:    1,
+				FractionalPart: 234,
 			},
-			{
-				String:    "1.012",
-				Decimills: 10120,
+			TestCase{
+				String:         "1.1234",
+				Decimills:      11234,
+				IntegerPart:    1,
+				FractionalPart: 1234,
 			},
-			{
-				String:    "0.1",
-				Decimills: 1000,
+			TestCase{
+				String:         "1.01",
+				Decimills:      10100,
+				IntegerPart:    1,
+				FractionalPart: 100,
+			},
+			TestCase{
+				String:         "1.1",
+				Decimills:      11000,
+				IntegerPart:    1,
+				FractionalPart: 1000,
+			},
+			TestCase{
+				String:         "0.1111",
+				Decimills:      1111,
+				IntegerPart:    0,
+				FractionalPart: 1111,
+			},
+			TestCase{
+				String:         "0.1",
+				Decimills:      1000,
+				IntegerPart:    0,
+				FractionalPart: 1000,
+			},
+			TestCase{
+				String:         "0.012",
+				Decimills:      120,
+				IntegerPart:    0,
+				FractionalPart: 120,
+			},
+			TestCase{
+				String:         "1.012",
+				Decimills:      10120,
+				IntegerPart:    1,
+				FractionalPart: 120,
 			},
 		}
 
-		for i := range tests {
-			d, err := ToDecimills(tests[i].String)
+		for i := range testCases {
+			d, err := ToDecimills(testCases[i].String)
 			require.NoError(t, err)
 			// since the default exponent is 4, it's expected that the
 			// decimills will have 4 spaces on the fractional part of the
 			// number. Example, 12.22 == 12.2200 == 122200
-			require.Equal(t, tests[i].Decimills, d.Decimills())
+			require.Equal(t, testCases[i].Decimills, d.Decimills())
+			require.Equal(t, testCases[i].IntegerPart, d.IntegerPart())
+			require.Equal(t, testCases[i].FractionalPart, d.FractionalPart())
 		}
 	})
 

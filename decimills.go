@@ -59,7 +59,7 @@ func ToDecimills(rate string) (Decimills, error) {
 		result := math.Pow(float64(10), float64(maxExponent))
 		return i * int64(result)
 	}(fraction, rate)
-	d.fractionalPart = fraction
+	d.fractionalPart = decimills
 
 	if decimills > int64(decimillsMax) {
 		return nil, Errx(fmt.Errorf("decimills can not be greater than %d", decimillsMax))
