@@ -5,6 +5,7 @@ go 1.13
 require (
 	github.com/ParaServices/errgo v0.1.0
 	github.com/ParaServices/gblcodes v0.2.9
+	github.com/ParaServices/paraenv v0.1.0
 	github.com/ParaServices/paralog v0.1.1
 	github.com/magicalbanana/dbal v0.1.0
 	github.com/satori/go.uuid v1.2.0
