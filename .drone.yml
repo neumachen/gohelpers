@@ -7,7 +7,12 @@ get:
   name: slack-webhook
 ---
 kind: pipeline
+type: kubernetes
 name: build-test
+
+volumes:
+  - name: deps
+    temp: {}
 
 clone:
   depth: 50
@@ -30,25 +35,23 @@ steps:
         on {{ repo.name }}:{{ build.branch }}> by {{ build.author }}
 
   - name: build-modules
-    image: golang:1.14.4-alpine3.12
+    image: us.gcr.io/para-devops/gotest:1.16.2
     volumes:
       - name: deps
         path: /go
+    environment:
+      GOPRIVATE: github.com/ParaServices/*
     commands:
-      - apk add --no-cache git
+      - go mod tidy
       - go build -v ./...
-      - go mod vendor
 
   - name: test
-    image: golang:1.14.4-alpine3.12
+    image: us.gcr.io/para-devops/gotest:1.16.2
     volumes:
       - name: deps
         path: /go
     depends_on:
       - build-modules
-    commands:
-      - apk add --no-cache alpine-sdk bash
-      - go test -v ./...
 
   - name: slack-notification-finish-test
     image: plugins/slack
