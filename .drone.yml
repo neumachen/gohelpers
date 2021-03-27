@@ -17,10 +17,6 @@ volumes:
 clone:
   depth: 50
 
-volumes:
-  - name: deps
-    temp: {}
-
 steps:
   - name: slack-notification-start-build-images
     image: plugins/slack
