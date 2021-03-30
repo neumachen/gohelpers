@@ -11,8 +11,6 @@ github.com/ParaServices/paraenv v0.1.0 h1:K0nqEM9XFCKGL8aNkI0Udsj1aQy2objoyrnbG1
 github.com/ParaServices/paraenv v0.1.0/go.mod h1:Lv3PnZayNlDIMnJq8ZcbvBdYk/gTGgZ/1fzAGop+f1c=
 github.com/ParaServices/paralog v0.1.1 h1:zdZXE2ymwK9xfkykxuUKEyfwRJlqr8v2gffIK5jdHaM=
 github.com/ParaServices/paralog v0.1.1/go.mod h1:Fm02wq4G/6DewrrhmhUCUY6+9yaeJdLZkcghfA2G40o=
-github.com/c2fo/testify v0.0.0-20150827203832-fba96363964a h1:lXGVReN5qeiyu6AZpIgYJN1PoXSy1koT3nUP3ZRMWm0=
-github.com/c2fo/testify v0.0.0-20150827203832-fba96363964a/go.mod h1:NWprYCk3t+OPBp2UnxQ39EF9vPpUzoMr498TiqMA8jU=
 github.com/client9/misspell v0.3.4/go.mod h1:qj6jICC3Q7zFZvVWo7KLAzC3yx5G7kyvSDkc90ppPyw=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=
@@ -39,11 +37,11 @@ github.com/kr/pretty v0.1.0/go.mod h1:dAy3ld7l9f0ibDNOQOHHMYYIIbhfbHSm3C4ZsoJORN
 github.com/kr/pty v1.1.1/go.mod h1:pFQYn66WHrOpPYNljwOMqo10TkYh1fy3cYio2l3bCsQ=
 github.com/kr/text v0.1.0 h1:45sCR5RtlFHMR4UwH9sdQ5TC8v0qDQCHnXt+kaKSTVE=
 github.com/kr/text v0.1.0/go.mod h1:4Jbv+DJW3UT/LiOwJeYQe1efqtUx/iVham/4vfdArNI=
-github.com/lib/pq v0.0.0-20180123210206-19c8e9ad0095/go.mod h1:5WUZQaWbwv1U+lTReE5YruASi9Al49XbQIvNi/34Woo=
-github.com/lib/pq v1.2.0 h1:LXpIM/LZ5xGFhOpXAQUIMM1HdyqzVYM13zNdjCEEcA0=
 github.com/lib/pq v1.2.0/go.mod h1:5WUZQaWbwv1U+lTReE5YruASi9Al49XbQIvNi/34Woo=
-github.com/magicalbanana/dbal v0.2.0 h1:kQtSEQqvbeAkcVhy+HOC3+hyK4SsZeC5DKx7eaUYxKk=
-github.com/magicalbanana/dbal v0.2.0/go.mod h1:lWIK6gbncguKbuOXhfB++mC381KySdgqejeVxBH+qiA=
+github.com/lib/pq v1.10.0 h1:Zx5DJFEYQXio93kgXnQ09fXNiUKsqv4OUEu2UtGcB1E=
+github.com/lib/pq v1.10.0/go.mod h1:AlVN5x4E4T544tWzH6hKfbfQvm3HdbOxrmggDNAPY9o=
+github.com/magicalbanana/dbal v0.3.1 h1:bbTS+XCE2Ux6DwaHg2HBsOzjjG2W6rJpQ2CLpHy+4gE=
+github.com/magicalbanana/dbal v0.3.1/go.mod h1:gW1dZ7pJwdkF901TWCh66IYb/6Fb6dLF5Ruc7Ar+WxI=
 github.com/magicalbanana/errorx v0.2.2 h1:UpckbVzIU1OnSpxdkoMLKvxVDFc4CJHKQsK7E+VDxhE=
 github.com/magicalbanana/errorx v0.2.2/go.mod h1:xQS+k1nyj4JQaZ1/7NFdCfpcLQ+hTrB1X4BYBe8rymM=
 github.com/nats-io/nuid v1.0.1 h1:5iA8DT8V7q8WK2EScv2padNa/rTESc1KdnPw4TC2paw=
@@ -58,7 +56,6 @@ github.com/satori/go.uuid v1.2.0/go.mod h1:dA0hQrYB0VpLJoorglMZABFdXlWrHn1NEOzdh
 github.com/streadway/amqp v0.0.0-20190815230801-eade30b20f1d h1:5HjJ7tDIRsO3UbqNihgIU34zn4EK41IK838h38KFx8o=
 github.com/streadway/amqp v0.0.0-20190815230801-eade30b20f1d/go.mod h1:AZpEONHx3DKn8O/DFsRAY58/XVQiIPMTMB1SddzLXVw=
 github.com/stretchr/objx v0.1.0/go.mod h1:HFkY916IF+rwdDfMAkV7OtwuqBVzrE8GR6GFx+wExME=
-github.com/stretchr/testify v0.0.0-20171231124224-87b1dfb5b2fa/go.mod h1:a8OnRcib4nhh0OaRAV+Yts87kKdq0PP7pXfy6kDkUVs=
 github.com/stretchr/testify v1.2.2/go.mod h1:a8OnRcib4nhh0OaRAV+Yts87kKdq0PP7pXfy6kDkUVs=
 github.com/stretchr/testify v1.3.0/go.mod h1:M5WIy9Dh21IEIfnGCwXGc5bZfKNJtfHm1UVUgZn+9EI=
 github.com/stretchr/testify v1.4.0/go.mod h1:j7eGeouHqKxXV5pUuKE4zz7dFj8WfuZ+81PSLYec5m4=
