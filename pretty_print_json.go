@@ -13,6 +13,14 @@ func PrettyPrintJSON(b []byte) error {
 	if err != nil {
 		return err
 	}
-	fmt.Println(string(prettyJSON.Bytes()))
+	fmt.Println(prettyJSON.String())
 	return nil
+}
+
+func MarshalPrettyPrintJSON(v interface{}) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+	return PrettyPrintJSON(b)
 }
