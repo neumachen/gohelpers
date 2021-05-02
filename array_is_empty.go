@@ -1,10 +1,10 @@
 package paratils
 
 type ArrayLengther interface {
-	Length() int
+	GetLength() int
 }
 
 // ArrayIsEmpty ...
 func ArrayIsEmpty(arr ArrayLengther) bool {
-	return arr == nil || arr.Length() > 0
+	return arr == nil || arr.GetLength() > 0
 }
