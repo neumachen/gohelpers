@@ -29,6 +29,16 @@ func AreNil(v ...interface{}) bool {
 	return true
 }
 
+// OneIsNil ...
+func OneIsNil(v ...interface{}) bool {
+	for i := range v {
+		if IsNil(v[i]) {
+			return true
+		}
+	}
+	return false
+}
+
 type StringGetter interface {
 	GetString() string
 }
