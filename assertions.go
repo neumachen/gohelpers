@@ -1,6 +1,7 @@
 package paratils
 
 import (
+	"bytes"
 	"fmt"
 	"reflect"
 )
@@ -16,11 +17,22 @@ func ArrayIsEmpty(arr ArrayLengther) bool {
 
 // IsNil checks if the given interface is nil.
 func IsNil(v interface{}) bool {
-	return v == nil || (reflect.ValueOf(v).Kind() == reflect.Ptr && reflect.ValueOf(v).IsNil())
+	if v == nil {
+		return true
+	}
+
+	valueOf := reflect.ValueOf(v)
+
+	switch valueOf.Kind() {
+	case reflect.Chan, reflect.Func, reflect.Interface, reflect.Map, reflect.Ptr, reflect.Slice:
+		return valueOf.IsNil()
+	}
+
+	return false
 }
 
-// AreNil checks if the given interface is nil.
-func AreNil(v ...interface{}) bool {
+// AreAllNil checks if the given interface is nil.
+func AreAllNil(v ...interface{}) bool {
 	for i := range v {
 		if !IsNil(v[i]) {
 			return false
@@ -46,4 +58,8 @@ type StringGetter interface {
 func EqualStrings(a, b StringGetter) (bool, string) {
 	equal := a.GetString() == b.GetString()
 	return equal, fmt.Sprintf("%s, %s, equal: %v\n", a.GetString(), b.GetString(), equal)
+}
+
+func IsEqualBytes(a, b []byte) bool {
+	return bytes.Compare(a, b) == 0
 }

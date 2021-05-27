@@ -1,6 +1,8 @@
 package paratils
 
-import "bytes"
+import (
+	"bytes"
+)
 
 var emptyJSON = []byte(`{}`)
 
@@ -12,17 +14,23 @@ func AppendJSON(originalBytes, bytesToAdd []byte) []byte {
 	compareA := bytes.Compare(originalBytes, emptyJSON)
 	compareB := bytes.Compare(bytesToAdd, emptyJSON)
 
+	// both are nil
+	if AreAllNil(originalBytes, bytesToAdd) {
+		return nil
+	}
+
 	// both are empty
 	if compareA+compareB == 0 {
 		return nil
 	}
 
-	if compareA == 0 && compareB != 0 {
-		return bytesToAdd
+	// compare is
+	if compareA != 0 && (compareB == 0 || IsNil(bytesToAdd)) {
+		return originalBytes
 	}
 
-	if compareA != 0 && compareB == 0 {
-		return originalBytes
+	if (compareA == 0 || IsNil(originalBytes)) && compareB != 0 {
+		return bytesToAdd
 	}
 
 	var b bytes.Buffer
