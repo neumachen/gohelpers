@@ -2,8 +2,8 @@ cloud.google.com/go v0.26.0/go.mod h1:aQUYkXzVsufM+DwF1aE+0xfcU+56JwCaLick0ClmMT
 cloud.google.com/go v0.34.0/go.mod h1:aQUYkXzVsufM+DwF1aE+0xfcU+56JwCaLick0ClmMTw=
 cloud.google.com/go v0.38.0/go.mod h1:990N+gfupTy94rShfmMCWGDn0LpTmnzTp2qbd1dvSRU=
 github.com/BurntSushi/toml v0.3.1/go.mod h1:xHWCNGjB5oqiDr8zfno3MHue2Ht5sIBksp03qcyfWMU=
-github.com/ParaServices/errgo v0.4.0 h1:ZJrk2aeyMaaHRQ6whpKAuxbJCtZ9SA7IhtDjQmSoIzI=
-github.com/ParaServices/errgo v0.4.0/go.mod h1:/GOGrRCzQz9CZDsD1qhdc3yjoccJvywzp4jfAaFv/Xs=
+github.com/ParaServices/errgo v0.6.0 h1:PUGG7OoYn+U0/HMDHgYn7tJL1e5sRbfYlrQaHGWUSCM=
+github.com/ParaServices/errgo v0.6.0/go.mod h1:/GOGrRCzQz9CZDsD1qhdc3yjoccJvywzp4jfAaFv/Xs=
 github.com/ParaServices/paraenv v0.1.0 h1:K0nqEM9XFCKGL8aNkI0Udsj1aQy2objoyrnbG1wWpSY=
 github.com/ParaServices/paraenv v0.1.0/go.mod h1:Lv3PnZayNlDIMnJq8ZcbvBdYk/gTGgZ/1fzAGop+f1c=
 github.com/ParaServices/paralog v0.1.1 h1:zdZXE2ymwK9xfkykxuUKEyfwRJlqr8v2gffIK5jdHaM=
