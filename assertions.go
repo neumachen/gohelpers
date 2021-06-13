@@ -4,6 +4,7 @@ import (
 	"bytes"
 	"fmt"
 	"reflect"
+	"strings"
 )
 
 type ArrayLengther interface {
@@ -62,4 +63,10 @@ func EqualStrings(a, b StringGetter) (bool, string) {
 
 func IsEqualBytes(a, b []byte) bool {
 	return bytes.Compare(a, b) == 0
+}
+
+// StringIsEmpty checks if the givne str is empty. This does not consider
+// white spaces/tab as non empty values
+func StringIsEmpty(str string) bool {
+	return strings.TrimSpace(str) == ""
 }

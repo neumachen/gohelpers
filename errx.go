@@ -2,7 +2,6 @@ package paratils
 
 import (
 	"errors"
-	"fmt"
 	"reflect"
 
 	"github.com/ParaServices/errgo"
@@ -32,11 +31,9 @@ func NewErrx(s string) error {
 }
 
 func ErrIncorrectType(expected, actual reflect.Type) error {
-	return NewErrx(
-		fmt.Sprintf(
-			"expected type: %s, got: %s",
-			expected.Name(),
-			actual.Name(),
-		),
+	return errgo.NewF(
+		"expected type: %s, got: %s",
+		expected.Name(),
+		actual.Name(),
 	)
 }

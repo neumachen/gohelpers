@@ -7,6 +7,7 @@ import (
 )
 
 // ResponseCodeError ...
+// DEPRECATED: use github.com/ParaServices/paratypes
 type ResponseCodeError interface {
 	Error() string
 	ResponseCode() int
@@ -41,6 +42,7 @@ func (e *errExpectedResponse) MarshalLogObject(kv zapcore.ObjectEncoder) error {
 }
 
 // NewErrExpectedResponse ...
+// DEPRECATED: use github.com/ParaServices/paratypes
 func NewErrExpectedResponse(expectedRespCode, actualRespCode int, rawURL string) ResponseCodeError {
 	return &errExpectedResponse{
 		expectedResponseCode: expectedRespCode,
