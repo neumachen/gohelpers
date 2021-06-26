@@ -52,6 +52,12 @@ func OneIsNil(v ...interface{}) bool {
 	return false
 }
 
+type StringerFunc func() string
+
+func (s StringerFunc) GetString() string {
+	return s()
+}
+
 type StringGetter interface {
 	GetString() string
 }
