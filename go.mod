@@ -3,7 +3,7 @@ module github.com/ParaServices/paratils
 go 1.16
 
 require (
-	github.com/ParaServices/errgo v0.8.0
+	github.com/ParaServices/errgo v0.9.0
 	github.com/ParaServices/paralog v0.1.1
 	github.com/kr/pretty v0.1.0 // indirect
 	github.com/magicalbanana/dbal v0.3.1
