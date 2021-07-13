@@ -10,6 +10,8 @@ import (
 	"go.uber.org/zap"
 )
 
+// PostgresConfig ...
+// DEPRECATED: will be removed
 type PostgresConfig struct {
 	URL             url.URL
 	PingTime        int
@@ -20,6 +22,7 @@ type PostgresConfig struct {
 
 // SetupPostgresConnection conencts to a postgres database while pinging the
 // database to ensure that the connection is ative
+// DEPRECATED: will be removed. Use ParaServices/goapps
 func SetupPostgresConnection(cfg *PostgresConfig, lgr paralog.Logger) (dbal.DBAL, error) {
 	db, openErr := sql.Open("postgres", cfg.URL.String())
 	if openErr != nil {
