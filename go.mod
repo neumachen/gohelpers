@@ -1,15 +1,16 @@
-module github.com/ParaServices/paratils
+module github.com/neumachen/gohelpers
 
-go 1.16
+go 1.18
 
 require (
-	github.com/ParaServices/errgo v0.10.0
-	github.com/ParaServices/paralog v0.1.1
-	github.com/kr/pretty v0.2.0 // indirect
-	github.com/magicalbanana/dbal v0.3.1
-	github.com/pkg/errors v0.9.1 // indirect
-	github.com/satori/go.uuid v1.2.0
+	github.com/neumachen/errorx v0.5.0
 	github.com/stretchr/testify v1.7.0
-	go.uber.org/zap v1.17.0
+)
+
+require (
+	github.com/davecgh/go-spew v1.1.1 // indirect
+	github.com/kr/pretty v0.2.0 // indirect
+	github.com/pmezard/go-difflib v1.0.0 // indirect
 	gopkg.in/check.v1 v1.0.0-20190902080502-41f04d3bba15 // indirect
+	gopkg.in/yaml.v3 v3.0.0-20210107192922-496545a6307b // indirect
 )

@@ -68,11 +68,11 @@ func EqualStrings(a, b StringGetter) (bool, string) {
 }
 
 func IsEqualBytes(a, b []byte) bool {
-	return bytes.Compare(a, b) == 0
+	return bytes.Equal(a, b)
 }
 
 // StringIsEmpty checks if the givne str is empty. This does not consider
 // white spaces/tab as non empty values
 func StringIsEmpty(str string) bool {
-	return strings.TrimSpace(str) == ""
+	return strings.EqualFold("", strings.TrimSpace(str))
 }
