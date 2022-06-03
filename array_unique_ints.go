@@ -1,4 +1,4 @@
-package paratils
+package gohelpers
 
 // SliceUniqInts ...
 func SliceUniqInts(s []int) []int {

@@ -1,4 +1,4 @@
-package paratils
+package gohelpers
 
 // DateLayouter ...
 type DateLayouter interface {

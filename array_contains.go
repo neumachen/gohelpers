@@ -1,4 +1,4 @@
-package paratils
+package gohelpers
 
 // ArrayContainsStr ...
 func ArrayContainsStr(strSlice []string, searchString string) bool {

@@ -1,4 +1,4 @@
-package paratils
+package gohelpers
 
 // SliceExclusionStrings ...
 func SliceExclusionStrings(sliceA, sliceB []string) ([]string, []string) {

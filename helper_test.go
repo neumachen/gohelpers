@@ -1,4 +1,4 @@
-package paratils
+package gohelpers
 
 // we don't care about order. We only want to check if all the
 // elements are in the other array

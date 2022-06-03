@@ -1,4 +1,4 @@
-package paratils
+package gohelpers
 
 // SliceUniqStrings ...
 func SliceUniqStrings(s []string) []string {

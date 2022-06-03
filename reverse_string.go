@@ -1,4 +1,4 @@
-package paratils
+package gohelpers
 
 // ReverseString ...
 func ReverseString(s string) string {

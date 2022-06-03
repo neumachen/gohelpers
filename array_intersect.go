@@ -1,4 +1,4 @@
-package paratils
+package gohelpers
 
 // SliceIntersectStrings ...
 func SliceIntersectStrings(sliceA, sliceB []string) []string {

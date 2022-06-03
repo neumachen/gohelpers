@@ -1,4 +1,4 @@
-package paratils
+package gohelpers
 
 import (
 	"io/ioutil"

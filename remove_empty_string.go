@@ -1,4 +1,4 @@
-package paratils
+package gohelpers
 
 func RemoveEmptyString(slice *[]string) {
 	i := 0
